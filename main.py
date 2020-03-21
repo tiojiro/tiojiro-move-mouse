@@ -30,8 +30,8 @@ def start_move(lbl_run):
         time.sleep(2)
         if stop:
             break
-        x = window.winfo_x() + 70
-        y = window.winfo_y() + 10
+        x = window.winfo_x() + 80
+        y = window.winfo_y() + 35
         autopy.mouse.smooth_move(x,y)
         autopy.mouse.click()
         if stop:
@@ -39,8 +39,8 @@ def start_move(lbl_run):
         time.sleep(2)
         if stop:
             break
-        x = window.winfo_x() + 190
-        y = window.winfo_y() + 10
+        x = window.winfo_x() + 180
+        y = window.winfo_y() + 35
         autopy.mouse.smooth_move(x,y)
         autopy.mouse.click()
 
