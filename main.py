@@ -1,5 +1,5 @@
 import tkinter as tk
-import autopy, os, signal, sys, time, threading
+import autopy, os, sys, time, threading, platform
 import const, favicon
 
 #Variavel global para indicar o stop da thread
@@ -113,7 +113,9 @@ window.resizable(0, 0)
 window.config(menu=config_menu(window))
 #janela da aplicacao sempre na frente em relacao aos outros programas
 window.attributes('-topmost', True)
-window.wm_iconbitmap(favicon.favicon)
+#adicionar o favicon apenas no Windows
+if 'Windows' == platform.system():
+    window.wm_iconbitmap(default=favicon.favicon)
 #sobreescrever o atl+F4 e o X do windows e sempre passar pelo metodo quit_app
 #com isso garante que sera fechado a thread caso esteja ativa
 window.protocol("WM_DELETE_WINDOW", quit_app)
