@@ -114,7 +114,7 @@ window.config(menu=config_menu(window))
 #janela da aplicacao sempre na frente em relacao aos outros programas
 window.attributes('-topmost', True)
 #adicionar o favicon apenas no Windows
-if 'Windows' == platform.system():
+if const.MAIN_WINDOWS == platform.system():
     window.wm_iconbitmap(default=favicon.favicon)
 #sobreescrever o atl+F4 e o X do windows e sempre passar pelo metodo quit_app
 #com isso garante que sera fechado a thread caso esteja ativa
